@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Comment Saver",
+    "version": "1.0.0.6",
+    "description": "セッション切れ等に対して直近のコメント入力情報を自動保存し、再ログイン後にコメント欄に自動補完します。",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://sukurepo.azurewebsites.net/teachers_report/*"
+            ],
+            "js": [
+                "utils.js",
+                "content_output.js",
+                "content_input.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "permissions": [
+        "storage"
+    ]
+}
